@@ -1,13 +1,19 @@
 # World_Weather_Analysis
 
-## How might we provide real-time suggestions for our client's ideal hotels?
+## Purpose
+The purpose of this project was to create an algorithm that allows customers to find ideal vacation spots within their a specified temperature range. Customers input their preferences, and the code outputs a possible itinerary and directions and weather descriptions about the chosen locations. 
 
-Your first task was to define what you meant by "ideal." So, over the course of the conversation, you narrowed that to hotels that were:
-- (1) within a given range of latitude and longitude and that 
-- (2) provided the right kind of weather for the client.
+## Resources
+- Google Maps APIs (Places and Directions) 
+- Open Weather API
+- Citipy module
+- Jupyter Notebook
 
-Here's an outline of your project plan:
-
-- Task: Collect and analyze weather data across cities worldwide.
-- Purpose: PlanMyTrip will use the data to recommend ideal hotels based on clients' weather preferences.
-- Method: Create a Pandas DataFrame with 500 or more of the world's unique cities and their weather data in real time. This process will entail collecting, analyzing, and visualizing the data.
+## Approach Outline
+- Random coordinates are generated and coordinates belonging to cities are associated using the Citipy module
+- For each city, current local weather is scraped using the OpenWeatherAPI
+- Customers filter on the cities based on their ideal temperature and are given a world map of potential travel destinations
+ <img width="1128" alt="WeatherPy_vacation_map" src="https://user-images.githubusercontent.com/10199828/128401099-c093251f-075b-473d-91fa-7da597d0f3aa.png">
+- Next, local hotels for each destination are found using the Google Places API  
+- Lastly, a sample itinerary and travel route is provided for 4 cities using the Google Directions API. We also generate maps that display current local weather. <img width="1118" alt="WeatherPy_travel_map" src="https://user-images.githubusercontent.com/10199828/128401733-d6e420d1-a4ce-482b-a130-20605b6f6c92.png">
+<img width="1114" alt="WeatherPy_travel_map_markers" src="https://user-images.githubusercontent.com/10199828/128401950-6384ff87-366b-4047-bb15-5b34b4b8af51.png">
